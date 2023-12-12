@@ -10,8 +10,9 @@ const items = [
   ];
   
 //write the following functions and test them
-  
-function getitemNames(items){
+
+//use the map method instead 
+function getItemNames(items){
     let itemNames = [];
     for (let i = 0;i < items.length; i++){
         itemNames.push(items[i].name);
@@ -27,9 +28,9 @@ let itemPrices = [];
     }
 return itemPrices;
 }
-console.log(getItemPrices(items));//returns an array of prices
+console.log(getitemPrices(items));//returns an array of prices
 
-function (findItemById(id, items)){
+function findItemById(id , items){
 for (let i = 0; i<items.length; i++)
     if (items[i].id === id)
     {
@@ -56,4 +57,12 @@ function leastExpensiveItem(items){
 console.log(mostExpensiveItem(items));//returns the most expensive item 
 console.log(leastExpensiveItem(items));//returns the least expensive item 
   
-//console.log(calculateInventory(items));//returns the total value of the inventory 
+function calculateInventory(items){
+    let total = 0;
+    for (let i = 0; i < items.length; i++){
+    total = total + items[i].price * items[i].inventory;
+    return total;
+    }
+}
+
+console.log(calculateInventory(items));//returns the total value of the inventory 
